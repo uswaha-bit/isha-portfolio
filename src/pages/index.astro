@@ -1,0 +1,141 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import ExperienceItem from "../components/ExperienceItem.astro";
+
+const projects = [
+  {
+    emoji: "🏰",
+    title: "Frogger",
+    description: "A 2D game inspired by frigger. Frog needs to cross the road and the river to get to its destination. Use Arrow keys to play the game.",
+    image: "/frogger.png",
+    url: "https://isha-alvi.itch.io/frogger",
+    tags: ["Unity", "C#", "2D"],
+  },
+  {
+    emoji: "🐾",
+    title: "Asteroids",
+    description: "A 2D multi directional shooter gamer inspired by Asteroids.",
+    image: "/space.png",
+    url: "https://isha-alvi.itch.io/asteroids",
+    tags: ["Unity", "C#", "multiplayer"],
+  },
+  {
+    emoji: "🧩",
+    title: "Football World Championship 2026",
+    description: "A football game where you can play your favorite players and compete in the world championship.",
+    image: "/football.png",
+    url: "https://play.google.com/store/apps/details?id=com.football.world.champions&hl=en",
+    tags: ["Unity", "Physics", "football"],
+  },
+];
+
+const experience = [
+  {
+    role: "Game Designer",
+    company: "Game Storm Studio, Lahore",
+    period: "Jan 2026 — June 2026",
+    points: [
+      "Developed comprehensive game design documents for 6 distinct titles spanning FPS and simulation genre.",
+      "Executed rigorous quality assurance protocols on numerous mobile game iterations, identifying critical bugs across 10 game builds.",
+    ],
+  },
+  {
+    role: "Trainee Game Producer",
+    company: "Game District, Lahore",
+    period: "Aug 2025 — Nov 2025",
+    points: [
+      "Created comprehensive GDDs covering game mechanics, player progression, level design and game economy.",
+      "Designed 100+ levels for Color Fill Maze Game, building progression and difficulty sheets to balance player retention.",
+    ],
+  },
+];
+---
+<Layout title="Isha Alvi — Game Developer">
+  <Nav />
+
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Player One: Isha Alvi</p>
+      <h1>Building worlds people <span class="grad">actually want</span> to get lost in.</h1>
+      <p>I design and code games across engines, from scrappy solo prototypes to shipped multiplayer titles. Currently open for contract and full-time roles.</p>
+      <div class="hero-actions">
+        <a href="#work" class="btn btn-primary">Start Game</a>
+        <a href="#contact" class="btn btn-ghost">High Scores</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Selected work</p>
+        <h2>Shipped & prototyped projects</h2>
+      </div>
+      <div class="projects-grid">
+        {projects.map((p) => <ProjectCard {...p} />)}
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" style="background:var(--bg-alt); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Level history</p>
+        <h2>Work experience</h2>
+      </div>
+      <div class="exp-list">
+        {experience.map((e) => <ExperienceItem {...e} />)}
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Toolbox</p>
+        <h2>Skills & engines</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h4>Engines</h4>
+          <ul>
+            <li>Unity</li>
+            <li>Godot</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h4>Languages</h4>
+          <ul>
+            <li>C#</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h4>Platforms</h4>
+          <ul>
+            <li>PC</li>
+            <li>Android</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <p class="eyebrow">Get in touch</p>
+      <h2>Let's build something fun.</h2>
+      <p>Open to freelance, contract, and full-time opportunities.</p>
+      <div class="contact-links">
+        <a class="btn btn-primary" href="mailto:ishaalvi22@gmail.com">ishaalvi22@gmail.com</a>
+        <a class="btn btn-ghost" href="https://itch.io/profile/isha-alvi">Itch.io</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/ishaalvi/">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">&copy; 2026 Isha Alvi.</div>
+  </footer>
+</Layout>

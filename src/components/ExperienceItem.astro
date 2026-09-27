@@ -1,0 +1,21 @@
+---
+interface Props {
+  role: string;
+  company: string;
+  period: string;
+  points: string[];
+}
+const { role, company, period, points } = Astro.props;
+---
+<div class="exp-item">
+  <div class="exp-head">
+    <div>
+      <h3>{role}</h3>
+      <p class="exp-company">{company}</p>
+    </div>
+    <span class="exp-period">{period}</span>
+  </div>
+  <ul>
+    {points.map((p) => <li>{p}</li>)}
+  </ul>
+</div>

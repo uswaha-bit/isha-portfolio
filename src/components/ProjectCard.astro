@@ -1,0 +1,23 @@
+---
+interface Props {
+  emoji?: string;
+  title: string;
+  description: string;
+  tags: string[];
+  url?: string;
+  image?: string;
+}
+const { emoji = "🎮", title, description, tags, url = "#", image } = Astro.props;
+---
+<a class="card" href={url} target="_blank" rel="noopener">
+  <div class="card-thumb">
+    {image ? <img src={image} alt={title} /> : <span>{emoji}</span>}
+  </div>
+  <div class="card-body">
+    <h3>{title}</h3>
+    <p>{description}</p>
+    <div class="tags">
+      {tags.map((t) => <span class="tag">{t}</span>)}
+    </div>
+  </div>
+</a>
